@@ -1,8 +1,9 @@
 //change font chat color
-setInterval(function(){
-	$('.listTextContainer').each(function() {
-		if ($(this).html().indexOf('style')<=0) {
-			$('span',this).css('color','#ddd')
-		}
-	})
-}, 500)
+var fontColor = "#ccc"
+$('.listTextContainer .message').each(function() {
+	if ( $(this).parent().html().indexOf('color') < 0 ) { //flower
+		$(this).css('color', fontColor)
+	} else if ( $(this).parent().html().indexOf('#000000') > 0 ) { //black font
+		$("span",this).css('color', fontColor)
+	}
+})
